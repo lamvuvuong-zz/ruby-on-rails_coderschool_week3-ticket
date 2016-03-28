@@ -1,0 +1,17 @@
+<div class="container">
+<div class="container-fluid events-list">
+	<h1>New event</h1>
+
+	<%= simple_form_for @event do |f| %>
+		<%= f.input :name %>
+		<%= f.input :starts_at %>
+		<%= f.input :ends_at %>
+		<%= f.input :venue %>
+		<%= f.input :category %>
+		<%= f.input :hero_image_url %>
+		<%= f.input :extended_html_description %>
+		
+		<%= f.submit %>
+	<% end %>
+
+</div></div>

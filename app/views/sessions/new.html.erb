@@ -1,0 +1,20 @@
+<div class="container">
+<div class="container-fluid events-list">
+
+<h1>Log in</h1>
+
+<%= form_tag sessions_path, :class => "simple_form new_user", method: 'post' do %>
+<div class="form-group email optional user_email">
+	<%= label_tag :email, nil, :class => "email optional control-label" %>
+	<%= text_field_tag :email, "", :class => "string email optional form-control" %>
+</div>
+<div class="form-group password optional user_password">
+	<%= label_tag :password, nil, :class => "password optional control-label" %>
+	<%= password_field_tag :password, "", :class => "password optional form-control" %>
+</div>
+	<%= submit_tag 'Log in' %>
+<% end %>
+
+
+</div>
+</div>

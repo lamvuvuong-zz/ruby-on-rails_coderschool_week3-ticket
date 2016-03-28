@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>Information</h1>
+	<h3>Events<h3>
+<table class="table">
+  <thead class="thead thead-default">
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_events.each do |user_event| %>
+      <tr>
+        <% @event = Event.find_by_id(user_event.event_id) %>
+        <td><%= @event.name %></td>
+        <td><%= link_to "Show", event_path(@event.id), class: "nav-link" %></td>
+        <td><%= link_to "Edit", edit_event_path(@event.id), class: "nav-link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New event", new_event_path, class: "nav-link" %>	
+
+</div>
