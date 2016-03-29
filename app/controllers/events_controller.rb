@@ -8,17 +8,15 @@ class EventsController < ApplicationController
   end
 
   def create
-  	@venue = Venue.new(:full_address params[:venue])
-    @event = Article.new(event_params)
+  	@event = Event.new(event_params)
+    
+    if @event.save
+        @user_event = UserEvent.new(user_id: current_user.id, event_id: @event.id)
+        @user_event.save
+      redirect_to root_path
 
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    else
+      redirect_to action: :new
     end
   end
 
@@ -28,19 +26,21 @@ class EventsController < ApplicationController
   def edit
   	@event = Event.find(params[:id])
   	@category_event = Category.find(@event.category)
-  	@venue_event = Venue.find(@event.venue)
+  	@venues = Venue.all
   end
 
-   def update
+  def update
+    respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event }
       else
         format.html { render :edit }
       end
+    end
   end
   private
   	def event_params
-      params.require(:event).permit(:name, :hero_image_url, :venue, :category, :starts_at, :ends_at, :extended_html_description)
- 	end
+      params.require(:event).permit(:name, :starts_at, :ends_at, :hero_image_url, :extended_html_description, :category_id, :venue_id)
+   	end
 
 end

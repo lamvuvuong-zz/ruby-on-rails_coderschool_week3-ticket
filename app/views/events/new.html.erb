@@ -6,8 +6,12 @@
 		<%= f.input :name %>
 		<%= f.input :starts_at %>
 		<%= f.input :ends_at %>
-		<%= f.input :venue %>
-		<%= f.input :category %>
+		<%= f.input :venue_id do %>
+		  <%= f.select :venue_id, options_from_collection_for_select(Venue.all, :id, :full_address), {}, {class: 'form-control'} %>
+		<% end %>
+		<%= f.input :category_id do %>
+		  	<%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), {}, {class: 'form-control'} %>
+		<% end %>
 		<%= f.input :hero_image_url %>
 		<%= f.input :extended_html_description %>
 		

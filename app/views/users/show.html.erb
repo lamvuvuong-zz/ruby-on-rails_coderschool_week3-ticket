@@ -7,6 +7,7 @@
       <th>Name</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -15,6 +16,14 @@
       <tr>
         <% @event = Event.find_by_id(user_event.event_id) %>
         <td><%= @event.name %></td>
+        <%
+          @checked = OptionEvent.find_by(event: @event.id)
+        %>
+        <% if !@checked %>
+        <td><%= link_to "Active", new_option_event_path(event_id: @event.id), class: "nav-link" %></td>
+        <% else %>
+        <td>Actived</td>
+        <% end %>
         <td><%= link_to "Show", event_path(@event.id), class: "nav-link" %></td>
         <td><%= link_to "Edit", edit_event_path(@event.id), class: "nav-link" %></td>
       </tr>
@@ -22,5 +31,7 @@
   </tbody>
 </table>
 <%= link_to "New event", new_event_path, class: "nav-link" %>	
+<br />
+<%= link_to "New venue", venues_new_path, class: "nav-link" %> 
 
 </div>

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'venues/new'
+
   get 'events/edit'
 
   get 'sessions/new'
+
+  resources :venues
+
+  resources :option_events
 
   get 'users/new'
 

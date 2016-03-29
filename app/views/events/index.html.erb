@@ -10,7 +10,10 @@
     <% @events.in_groups_of(3) do |g| %>
       <div class="row">
         <% g.compact.each do |e| %>
+          <% @checked = OptionEvent.find_by(event: e.id) %>
+          <% if @checked %>
             <%= render partial: 'card', locals: {event: e} %>
+          <% end %>
         <% end %>
       </div>  
     <% end %>

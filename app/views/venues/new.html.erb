@@ -1,0 +1,22 @@
+<div class="container">
+<div class="container-fluid events-list">
+	<h1>New venue</h1>
+
+<%= form_for @venue, url: venues_path, method: :post do |f| %>
+<div class="form-group email optional user_email">
+	<%= label_tag :name, nil, :class => "email optional control-label" %>
+	<%= f.text_field :name, :class => "form-control" %>
+</div>
+<div class="form-group email optional user_email">
+	<%= label_tag :full_address, nil, :class => "email optional control-label" %>
+	<%= f.text_field :full_address, class: 'form-control' %>
+
+</div>
+<div class="form-group email optional user_email">
+<%= label_tag :Region, nil, :class => "email optional control-label" %>
+<%= f.select :region_id, options_from_collection_for_select(Region.all, :id, :name), {}, {class: 'form-control'}  %>
+
+</div>
+	<%= f.submit 'Create venue' %>
+<% end %>
+</div></div>
