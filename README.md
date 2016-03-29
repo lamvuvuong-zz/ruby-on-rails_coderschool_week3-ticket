@@ -4,9 +4,9 @@
 
 Submitted by: **Vuong Vu Lam**
 
-Time spent: **8** hours
+Time spent: **12** hours
 
-URL: ****
+URL: **https://murmuring-shelf-51227.herokuapp.com/**
 
 SimpleCov Test Coverage: **0%**
 
@@ -25,7 +25,7 @@ The following **required** functionality is complete:
 
 #### Tickets
 
-* [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`. 
+* [ ] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`. 
 * [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
 * [ ] Users cannot buy more tickets than the quantity available.
 * [ ] Users can only buy up to 10 of a ticket type at a time.
@@ -36,12 +36,12 @@ The following **required** functionality is complete:
 * [x] User can sign up by providing their email, password, and name. 
 * [x] User can login using an email and password. 
 * [x] Users can create events. 
-* [ ] Users must click "publish event" before an event becomes viewable to other users. 
+* [x] Users must click "publish event" before an event becomes viewable to other users. 
 * [ ] Users can create ticket types for that event. 
-* [ ] Users can create venues.
+* [x] Users can create venues.
 * [ ] An event must have at least one `ticket_type` defined before it can be published. 
-* [ ] User can see a list of events he or she has created.
-* [ ] Users can edit their event after creation. But only the user who created the event can edit the event. 
+* [x] User can see a list of events he or she has created.
+* [x] Users can edit their event after creation. But only the user who created the event can edit the event. 
 
 ### Optional Stories
 
@@ -52,6 +52,14 @@ The following **required** functionality is complete:
 * [ ] Ticket types have an optional "minimum" purchase quantity. ([Example Screenshot](http://i.imgur.com/DOYtAR0.png))
 * [ ] Events are automatically labeled as "Hot". "Hot" events should have a red border or some sort of visual flourish. The event title should also be prefixed with "**HOT:**".
 * [ ] Instead of showing all of the events on the main page, an "admin" user can dictate the events that show up on the main page.
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+![Video Walkthrough](03-CoderTicket.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
